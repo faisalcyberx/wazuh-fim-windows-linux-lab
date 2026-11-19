@@ -2,58 +2,66 @@
 
 ## Project Overview
 
-This project demonstrates File Integrity Monitoring (FIM) using Wazuh on Windows and Kali Linux endpoints.
+This hands-on cybersecurity lab demonstrates **File Integrity Monitoring (FIM)** using Wazuh across Windows 10 and Kali Linux endpoints.
 
-The lab focuses on detecting file creation, modification, and deletion activities through the Wazuh Dashboard.
+The project focuses on monitoring designated directories and detecting file creation, modification, and deletion events. Generated security alerts were investigated and verified through the Wazuh Dashboard.
 
-## Lab Environment
+## Lab Architecture
 
-- **SIEM:** Wazuh
-- **Manager:** AWS EC2
-- **Windows Endpoint:** Windows
-- **Linux Endpoint:** Kali Linux
-- **Monitoring Feature:** File Integrity Monitoring (FIM)
+| Component | Details |
+|---|---|
+| SIEM Platform | Wazuh |
+| Wazuh Manager | AWS EC2 |
+| Windows Endpoint | Windows 10 |
+| Windows Agent | `windows-agent-03 (005)` |
+| Linux Endpoint | Kali Linux |
+| Linux Agent | `kali-snort (009)` |
+| Monitoring Feature | File Integrity Monitoring (FIM) |
+
+## Monitored Directories
+
+| Endpoint | Monitored Directory |
+|---|---|
+| Windows 10 | `C:\FIM-Lab` |
+| Kali Linux | `/var/tmp/FIM-Lab` |
 
 ## Lab Objectives
 
-- Configure FIM on Windows and Kali Linux.
-- Monitor specific directories for file changes.
-- Detect file creation, modification, and deletion.
-- Verify generated security alerts in Wazuh Dashboard.
+- Configure File Integrity Monitoring on Windows and Kali Linux.
+- Monitor dedicated directories for file system changes.
+- Detect file creation, modification, and deletion activities.
+- Generate and investigate Wazuh security alerts.
+- Validate endpoint monitoring through the Wazuh Dashboard.
 
-## Activities Performed
+## Implementation
 
-1. Created dedicated FIM test directories.
-2. Configured monitored paths in the Wazuh agent configuration.
-3. Restarted the agents after configuration changes.
-4. Created test files.
-5. Modified existing files.
-6. Deleted test files.
-7. Verified the generated alerts in Wazuh Dashboard.
+1. Created dedicated FIM test directories on both endpoints.
+2. Configured monitored directories in the existing Wazuh agent configuration files.
+3. Enabled real-time monitoring.
+4. Restarted Wazuh agents to apply configuration changes.
+5. Created test files in monitored directories.
+6. Modified existing test files.
+7. Deleted test files.
+8. Investigated the generated events in Wazuh Dashboard under **Threat Hunting → Events**.
 
-## Expected Wazuh Rule IDs
+## Configuration Files
 
-| Activity | Rule ID |
-|---|---|
-| File Added | 554 |
-| File Modified | 550 |
-| File Deleted | 553 |
+The following configuration examples contain the relevant FIM configuration snippets:
 
-## Results
+- [Windows FIM Configuration](Configuration/windows-fim-config.xml)
+- [Linux FIM Configuration](Configuration/linux-fim-config.xml)
 
-Wazuh successfully detected file creation, modification, and deletion activities on both Windows and Kali Linux endpoints.
+**Actual agent configuration file locations:**
 
-## Skills Demonstrated
+- Windows: `C:\Program Files (x86)\ossec-agent\ossec.conf`
+- Kali Linux: `/var/ossec/etc/ossec.conf`
 
-- SIEM Monitoring
-- Wazuh Agent Configuration
-- File Integrity Monitoring
-- Windows Security Monitoring
-- Linux Security Monitoring
-- Security Alert Investigation
+## Detection Results
 
-## Author
+Wazuh successfully generated alerts for file system activities on both endpoints.
 
-Faisal CyberX
-
-Cybersecurity | SOC Analyst Learning Journey
+| Activity | Wazuh Rule ID |
+|---|---:|
+| File Added / Created | `554` |
+| File Modified | `550` |
+| File Deleted | `
