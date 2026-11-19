@@ -1,0 +1,8 @@
+
+<!-- Wazuh FIM configuration example for Kali Linux -->
+<!-- Add these entries inside the existing syscheck section -->
+
+<syscheck>
+  <disabled>no</disabled>
+  <directories check_all="yes" realtime="yes">/var/tmp/FIM-Lab</directories>
+</syscheck>
