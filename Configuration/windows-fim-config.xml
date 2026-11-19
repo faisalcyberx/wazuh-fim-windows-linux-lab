@@ -1,0 +1,8 @@
+
+<!-- Wazuh FIM configuration example for Windows -->
+<!-- Add these entries inside the existing syscheck section -->
+
+<syscheck>
+  <disabled>no</disabled>
+  <directories check_all="yes" realtime="yes">C:\FIM-Lab</directories>
+</syscheck>
