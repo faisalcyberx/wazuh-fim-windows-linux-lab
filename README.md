@@ -64,4 +64,47 @@ Wazuh successfully generated alerts for file system activities on both endpoints
 |---|---:|
 | File Added / Created | `554` |
 | File Modified | `550` |
-| File Deleted | `
+| File Deleted | `553` |
+
+## Evidence & Screenshots
+
+### Windows FIM Evidence
+[View Windows FIM Screenshots](Evidence/Windows-FIM/)
+
+### Linux FIM Evidence
+[View Linux FIM Screenshots](Evidence/Linux-FIM/)
+
+### Wazuh Dashboard Evidence
+- [Windows FIM Dashboard Alerts](Evidence/Dashboard/15-windows-fim-dashboard-alerts.png.PNG)
+- [Linux FIM Dashboard Alerts](Evidence/Dashboard/16-linux-fim-dashboard-alerts.png.PNG)
+
+## Documentation
+
+Detailed lab procedures and analysis:
+
+- [Windows FIM SOP](Documentation/Windows-FIM-SOP.md)
+- [Linux FIM SOP](Documentation/Linux-FIM-SOP.md)
+- [Detection Analysis](Documentation/Detection-Analysis.md)
+
+## Skills Demonstrated
+
+- Security Information and Event Management (SIEM)
+- Wazuh SIEM Deployment and Monitoring
+- Wazuh Agent Configuration
+- File Integrity Monitoring (FIM)
+- Windows Security Monitoring
+- Linux Security Monitoring
+- Real-Time File Change Detection
+- Security Alert Investigation
+- Hands-on SOC Lab Documentation
+
+## Key Learning Outcome
+
+This lab provided practical experience in configuring endpoint file integrity monitoring, generating security events, and validating detection results through a centralized SIEM platform.
+
+## Author
+
+**Faisal CyberX**  
+Cybersecurity | Aspiring SOC Analyst
+
+[GitHub Profile](https://github.com/faisalcyberx)
